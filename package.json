@@ -1,14 +1,19 @@
 {
-  "name": "bun-lambda-construct",
-  "module": "index.ts",
+  "name": "bun-lambda",
   "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
+    "@types/aws-lambda": "^8.10.147",
     "@types/bun": "latest"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.0.0",
-    "constructs": "^10.0.0",
     "typescript": "^5.0.0"
-  }
+  },
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
 }
