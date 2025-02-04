@@ -87,17 +87,16 @@ new BunFunction(this, 'MyBunFunction', {
 Here's an example of a simple Lambda handler using Bun:
 
 ```typescript
+import type { Context } from 'aws-lambda';
 import { startRuntime } from 'bun-lambda-boostrap';
 
-async function main() {
-  await startRuntime(async (event, context) => {
-    console.log('event', JSON.stringify(event, null, 2));
-    console.log('context', JSON.stringify(context, null, 2));
-    return { message: 'Hello from Bun AWS Lambda!' };
-  });
+async function handler(event: any, context: Context) {
+  console.log('event', JSON.stringify(event, null, 2));
+  console.log('context', JSON.stringify(context, null, 2));
+  return { message: 'Hello from Bun AWS Lambda!' };
 }
 
 if (require.main === module) {
-  main().catch(console.error);
+  startRuntime(handler).catch(console.error);
 }
 ```
