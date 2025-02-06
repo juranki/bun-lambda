@@ -1,1 +1,1 @@
-export * from './bootstrap';
+export { startRuntime } from './bootstrap';

@@ -1,5 +1,5 @@
-import { startRuntime } from 'bun-lambda-boostrap';
-import { handler } from '../app';
+import { startRuntime } from 'bun-lambda-bootstrap'
+import { handler } from '../api';
 
 if (require.main === module) {
   startRuntime(handler).catch(console.error);

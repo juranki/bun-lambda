@@ -3,7 +3,7 @@ import * as lambda from 'aws-cdk-lib/aws-lambda';
 import { Stack } from 'aws-cdk-lib';
 import { rmSync } from 'node:fs';
 import { join } from 'node:path';
-import { sanitizePath } from './sanitize-path';
+import { sanitizePath } from '../util/sanitize-path';
 
 interface BunFunctionProps extends lambda.FunctionOptions {
   entry: string;
@@ -11,7 +11,9 @@ interface BunFunctionProps extends lambda.FunctionOptions {
 
 export class BunFunction extends lambda.Function {
   constructor(scope: Construct, id: string, props: BunFunctionProps) {
-    const buildDir = sanitizePath(join('.', 'build', Stack.of(scope).stackName, scope.node.addr, id));
+    const buildDir = sanitizePath(
+      join('.', 'build', Stack.of(scope).stackName, scope.node.addr, id),
+    );
     const bootstrapPath = join(buildDir, 'bootstrap');
     rmSync(bootstrapPath, { recursive: true, force: true });
     const target =

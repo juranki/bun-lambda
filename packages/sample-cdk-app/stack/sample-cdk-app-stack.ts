@@ -1,4 +1,4 @@
-import { BunFunction } from 'bun-lambda-construct';
+import { BunFunction } from 'bun-cdk-constructs';
 import * as cdk from 'aws-cdk-lib';
 import type { Construct } from 'constructs';
 import { join } from 'node:path';

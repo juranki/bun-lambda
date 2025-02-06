@@ -12,18 +12,8 @@
         "typescript": "^5.0.0",
       },
     },
-    "packages/bun-lambda-bootstrap": {
-      "name": "bun-lambda-boostrap",
-      "version": "0.0.0",
-      "devDependencies": {
-        "@types/bun": "latest",
-      },
-      "peerDependencies": {
-        "typescript": "^5.0.0",
-      },
-    },
-    "packages/bun-lambda-construct": {
-      "name": "bun-lambda-construct",
+    "packages/bun-cdk-constructs": {
+      "name": "bun-cdk-constructs",
       "version": "0.0.0",
       "devDependencies": {
         "@types/bun": "latest",
@@ -34,12 +24,22 @@
         "typescript": "^5.0.0",
       },
     },
+    "packages/bun-lambda-bootstrap": {
+      "name": "bun-lambda-bootstrap",
+      "version": "0.0.0",
+      "devDependencies": {
+        "@types/bun": "latest",
+      },
+      "peerDependencies": {
+        "typescript": "^5.0.0",
+      },
+    },
     "packages/sample-cdk-app": {
       "name": "sample-cdk-app",
       "dependencies": {
         "aws-cdk-lib": "^2.177.0",
+        "bun-cdk-constructs": "workspace:.",
         "bun-lambda-bootstrap": "workspace:.",
-        "bun-lambda-construct": "workspace:.",
         "constructs": "^10.4.2",
         "hono": "^4.6.20",
       },
@@ -108,11 +108,9 @@
 
     "brace-expansion": ["brace-expansion@1.1.11", "", { "dependencies": { "balanced-match": "^1.0.0", "concat-map": "0.0.1" } }, "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA=="],
 
-    "bun-lambda-boostrap": ["bun-lambda-boostrap@workspace:packages/bun-lambda-bootstrap"],
+    "bun-cdk-constructs": ["bun-cdk-constructs@workspace:packages/bun-cdk-constructs"],
 
-    "bun-lambda-bootstrap": ["sample-cdk-app@workspace:packages/sample-cdk-app"],
-
-    "bun-lambda-construct": ["bun-lambda-construct@workspace:packages/bun-lambda-construct"],
+    "bun-lambda-bootstrap": ["bun-lambda-bootstrap@workspace:packages/bun-lambda-bootstrap"],
 
     "bun-types": ["bun-types@1.2.2", "", { "dependencies": { "@types/node": "*", "@types/ws": "~8.5.10" } }, "sha512-RCbMH5elr9gjgDGDhkTTugA21XtJAy/9jkKe/G3WR2q17VPGhcquf9Sir6uay9iW+7P/BV0CAHA1XlHXMAVKHg=="],
 

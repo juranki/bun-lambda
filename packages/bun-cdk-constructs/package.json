@@ -1,5 +1,5 @@
 {
-  "name": "bun-lambda-construct",
+  "name": "bun-cdk-constructs",
   "version": "0.0.0",
   "module": "index.ts",
   "type": "module",

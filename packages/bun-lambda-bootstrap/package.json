@@ -1,5 +1,5 @@
 {
-  "name": "bun-lambda-boostrap",
+  "name": "bun-lambda-bootstrap",
   "version": "0.0.0",
   "module": "index.ts",
   "type": "module",
