@@ -17,7 +17,7 @@ export class SampleCdkAppStack extends cdk.Stack {
       entry: join(__dirname, 'sample-cdk-app-stack.handler.ts'),
     });
 
-    arm.function.addFunctionUrl({ authType: FunctionUrlAuthType.NONE });
-    x86.function.addFunctionUrl({ authType: FunctionUrlAuthType.NONE });
+    arm.addFunctionUrl({ authType: FunctionUrlAuthType.NONE });
+    x86.addFunctionUrl({ authType: FunctionUrlAuthType.NONE });
   }
 }
